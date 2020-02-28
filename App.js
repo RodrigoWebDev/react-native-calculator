@@ -12,13 +12,26 @@ export default class App extends Component {
     super(props);
     this.state = {
       expression: "",
-      result: ""
+      result: "",
+      operator: false
     };
 
     this.handlePress = val => {
-      this.setState({
-        expression: this.state.expression + val
-      });
+      if (val === "+" || val === "-" || val === "/" || val === "*") {
+        this.setState({
+          operator: true
+        });
+      } else {
+        this.setState({
+          operator: false
+        });
+      }
+
+      if (this.state.operator === false) {
+        this.setState({
+          expression: this.state.expression + val
+        });
+      }
     };
 
     this.handleCalculate = e => {
