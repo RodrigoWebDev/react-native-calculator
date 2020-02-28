@@ -15,7 +15,7 @@ export default class App extends Component {
       result: ""
     };
 
-    this.handleClick = val => {
+    this.handlePress = val => {
       this.setState({
         expression: this.state.expression + val
       });
@@ -45,38 +45,38 @@ export default class App extends Component {
           currentOperator={this.state.currentOperator}
         />
 
-        <Button handleClick={this.handleClick}>7</Button>
-        <Button handleClick={this.handleClick}>8</Button>
-        <Button handleClick={this.handleClick}>9</Button>
+        <Button handlePress={this.handlePress}>7</Button>
+        <Button handlePress={this.handlePress}>8</Button>
+        <Button handlePress={this.handlePress}>9</Button>
         <Button
-          handleClick={this.handleClick}
+          handlePress={this.handlePress}
           customCSS={styles.buttonOperation}
         >
           /
         </Button>
-        <Button handleClick={this.handleClick}>4</Button>
-        <Button handleClick={this.handleClick}>5</Button>
-        <Button handleClick={this.handleClick}>6</Button>
+        <Button handlePress={this.handlePress}>4</Button>
+        <Button handlePress={this.handlePress}>5</Button>
+        <Button handlePress={this.handlePress}>6</Button>
         <Button
-          handleClick={this.handleClick}
+          handlePress={this.handlePress}
           customCSS={styles.buttonOperation}
         >
           *
         </Button>
-        <Button handleClick={this.handleClick}>1</Button>
-        <Button handleClick={this.handleClick}>2</Button>
-        <Button handleClick={this.handleClick}>3</Button>
+        <Button handlePress={this.handlePress}>1</Button>
+        <Button handlePress={this.handlePress}>2</Button>
+        <Button handlePress={this.handlePress}>3</Button>
         <Button
-          handleClick={this.handleClick}
+          handlePress={this.handlePress}
           customCSS={styles.buttonOperation}
         >
           -
         </Button>
-        <Button handleClick={this.handleClick}>0</Button>
-        <Button handleClick={this.handleClick}>.</Button>
+        <Button handlePress={this.handlePress}>0</Button>
+        <Button handlePress={this.handlePress}>.</Button>
 
         <Calc
-          handleClick={this.handleCalculate}
+          handlePress={this.handleCalculate}
           customCSS={styles.buttonResult}
           textCSS={styles.textWhite}
         >
@@ -85,7 +85,7 @@ export default class App extends Component {
 
         <Button
           customCSS={styles.buttonOperation}
-          handleClick={this.handleClick}
+          handlePress={this.handlePress}
         >
           +
         </Button>

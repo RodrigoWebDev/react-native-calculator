@@ -1,16 +1,17 @@
 import React, { Component } from "react";
-import { Text, View } from "react-native";
+import { Text, View, TouchableWithoutFeedback } from "react-native";
 import styles from "./CSS";
 
 export default class Number extends Component {
   render() {
     return (
-      <View
-        style={[styles.button, this.props.customCSS]}
-        onClick={() => this.props.handleClick(this.props.children)}
+      <TouchableWithoutFeedback
+        onPress={() => this.props.handlePress(this.props.children)}
       >
-        <Text style={this.props.textCSS}>{this.props.children}</Text>
-      </View>
+        <View style={[styles.button, this.props.customCSS]}>
+          <Text style={this.props.textCSS}>{this.props.children}</Text>
+        </View>
+      </TouchableWithoutFeedback>
     );
   }
 }

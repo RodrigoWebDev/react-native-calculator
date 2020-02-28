@@ -7,30 +7,31 @@ const color = {
 
 export default StyleSheet.create({
   topview: {
-    height: "100px"
+    height: 100
   },
   title: {
-    marginBottom: "20px",
-    marginTop: "20px",
+    marginBottom: 20,
+    marginTop: 20,
     width: "100%"
   },
+
   titleText: {
-    fontSize: "20px",
+    fontSize: 20,
     fontWeight: "900"
   },
   button: {
     width: "24%",
-    height: "50px",
+    height: 50,
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
     flexDirection: "row",
     borderStyle: "solid",
-    borderWidth: "1px",
+    borderWidth: 1,
     borderColor: "#f1f3f4",
     backgroundColor: "#f1f3f4",
-    marginBottom: "10px",
-    borderRadius: "5px"
+    marginBottom: 10,
+    borderRadius: 5
   },
   container: {
     flex: 1,
@@ -40,9 +41,9 @@ export default StyleSheet.create({
     alignItems: "center",
     alignContent: "flex-start",
     justifyContent: "space-between",
-    paddingLeft: "16px",
-    paddingRight: "16px",
-    maxWidth: "600px",
+    paddingLeft: 16,
+    paddingRight: 16,
+    maxWidth: 600,
     marginLeft: "auto",
     marginRight: "auto"
   },
@@ -57,11 +58,11 @@ export default StyleSheet.create({
   },
   topview: {
     flexBasis: "100%",
-    height: "40px",
+    height: 40,
     display: "flex",
     alignItems: "center",
-    paddingLeft: "16px",
-    paddingRight: "16px",
+    paddingLeft: 16,
+    paddingRight: 16,
     justifyContent: "flex-start",
     flexDirection: "row"
   },
@@ -69,17 +70,17 @@ export default StyleSheet.create({
     flexGrow: 1
   },
   clean: {
-    width: "50px",
-    height: "30px",
+    width: 50,
+    height: 30,
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
     flexDirection: "row",
     borderStyle: "solid",
-    borderWidth: "1px",
+    borderWidth: 1,
     backgroundColor: color.secundary,
     borderColor: color.secundary,
-    borderRadius: "5px"
+    borderRadius: 5
   },
   cleanText: {
     color: "white"
