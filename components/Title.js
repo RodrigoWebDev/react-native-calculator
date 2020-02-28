@@ -2,11 +2,11 @@ import React, { Component } from "react";
 import { Text, View } from "react-native";
 import styles from "./CSS";
 
-export default class Topview extends Component {
+export default class Title extends Component {
   render() {
     return (
-      <View style={styles.topview}>
-        <Text style={styles.topviewText}>{this.props.expression}</Text>
+      <View style={styles.title}>
+        <Text style={styles.titleText}>React Native Calculator</Text>
       </View>
     );
   }

@@ -5,19 +5,17 @@ import {
 } from 'react-native';
 import styles from "./CSS"
 
-
-export default class Operator extends Component {
+export default class Result extends Component {
     render() {
         return (
-            <View 
+            <View
                 style={[styles.button, this.props.customCSS]}
-                onClick={() => this.props.handleClickOperator(this.props.children)}
+                onClick={this.props.handleClick}
             >
                 <Text style={this.props.textCSS}>{this.props.children}</Text>
             </View>
         );
     }
-
 }
 
 

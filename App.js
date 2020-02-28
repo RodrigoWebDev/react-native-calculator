@@ -1,125 +1,96 @@
-import React, { Component } from 'react';
-import {
-  View,
-  Text
-} from 'react-native';
-import Number from "./components/Number"
-import Operator from "./components/Operator"
-import Result from "./components/Result"
-import Topview from "./components/Topview"
-import styles from "./components/CSS"
-
-
+import React, { Component } from "react";
+import { View, Text } from "react-native";
+import Button from "./components/Button";
+import Calc from "./components/Calc";
+import Topview from "./components/Topview";
+import Result from "./components/Result";
+import styles from "./components/CSS";
+import Title from "./components/Title";
 
 export default class App extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-      currentNumber: "",
-      nextNumber: "",
-      currentOperator: "",
+      expression: "",
       result: ""
-    }
+    };
 
-
-    this.handleClickNumber = val => {
-      if(this.state.currentOperator === ""){
-        this.setState({
-          currentNumber: this.state.currentNumber + val
-        })
-      }else{
-        this.setState({
-          nextNumber: this.state.nextNumber + val
-        })
-      }
-      
-      console.log("Current number:", this.state.currentNumber)
-      console.log("Next number:", this.state.nextNumber)
-    }
-
-    this.handleClickOperator = val => {
+    this.handleClick = val => {
       this.setState({
-        currentOperator: val
-      })
-    }
+        expression: this.state.expression + val
+      });
+    };
 
-    this.handleClickCalculate = e => {
-      console.log("Click");
-      let val1 = parseFloat(this.state.currentNumber)
-      let val2 = parseFloat(this.state.nextNumber)
-      let operator = this.state.currentOperator
-
-      switch(operator){
-        case "+": this.setState({ result : val1 + val2})
-        case "-": this.setState({ result : val1 - val2})
-        case "x": this.setState({ result : val1 * val2})
-        case "÷": this.setState({ result : val1 / val2})
-      }
-
-      console.log(`${val1} ${operator} ${val2} ${this.state.result}`)
-
+    this.handleCalculate = e => {
       this.setState({
-        currentNumber: "",
-        nextNumber: "",
-        currentOperator: ""
-      })
+        result: eval(this.state.expression)
+      });
+    };
 
-      
-    }
+    this.handleClean = e => {
+      this.setState({
+        expression: "",
+        result: ""
+      });
+    };
   }
 
   render() {
-
     return (
       <View style={styles.container}>
-        
+        <Title />
+
         <Topview
-          currentNumber={this.state.currentNumber}
+          expression={this.state.expression}
           currentOperator={this.state.currentOperator}
-          nextNumber={this.state.nextNumber}
         />
 
-        <Number handleClickNumber={this.handleClickNumber}>7</Number>
-        <Number handleClickNumber={this.handleClickNumber}>8</Number>
-        <Number handleClickNumber={this.handleClickNumber}>9</Number>
-        <Operator
-          handleClickOperator={this.handleClickOperator}
+        <Button handleClick={this.handleClick}>7</Button>
+        <Button handleClick={this.handleClick}>8</Button>
+        <Button handleClick={this.handleClick}>9</Button>
+        <Button
+          handleClick={this.handleClick}
           customCSS={styles.buttonOperation}
         >
-          ÷
-        </Operator>
-        <Number handleClickNumber={this.handleClickNumber}>4</Number>
-        <Number handleClickNumber={this.handleClickNumber}>5</Number>
-        <Number handleClickNumber={this.handleClickNumber}>6</Number>
-        <Operator
-          handleClickOperator={this.handleClickOperator}
+          /
+        </Button>
+        <Button handleClick={this.handleClick}>4</Button>
+        <Button handleClick={this.handleClick}>5</Button>
+        <Button handleClick={this.handleClick}>6</Button>
+        <Button
+          handleClick={this.handleClick}
           customCSS={styles.buttonOperation}
         >
-          x
-        </Operator>
-        <Number handleClickNumber={this.handleClickNumber} >1</Number>
-        <Number handleClickNumber={this.handleClickNumber}>2</Number>
-        <Number handleClickNumber={this.handleClickNumber}>3</Number>
-        <Operator
-          handleClickOperator={this.handleClickOperator}
+          *
+        </Button>
+        <Button handleClick={this.handleClick}>1</Button>
+        <Button handleClick={this.handleClick}>2</Button>
+        <Button handleClick={this.handleClick}>3</Button>
+        <Button
+          handleClick={this.handleClick}
           customCSS={styles.buttonOperation}
         >
           -
-        </Operator>
-        <Number handleClickNumber={this.handleClickNumber}>0</Number>
-        <Number handleClickNumber={this.handleClickNumber}>.</Number>
+        </Button>
+        <Button handleClick={this.handleClick}>0</Button>
+        <Button handleClick={this.handleClick}>.</Button>
 
-        <Result handleClick={this.handleClickCalculate} customCSS={styles.buttonResult} textCSS={styles.textWhite}>=</Result>
+        <Calc
+          handleClick={this.handleCalculate}
+          customCSS={styles.buttonResult}
+          textCSS={styles.textWhite}
+        >
+          =
+        </Calc>
 
-        <Operator
+        <Button
           customCSS={styles.buttonOperation}
-          handleClickOperator={this.handleClickOperator}
+          handleClick={this.handleClick}
         >
           +
-        </Operator>
+        </Button>
+        <Result handleClean={this.handleClean} result={this.state.result} />
       </View>
     );
-
   }
-
 }
