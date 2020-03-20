@@ -9,8 +9,8 @@ You can download the android app [here](https://rqueiroz.netlify.com/calc.apk)
 
 * Javascript
 * React Native
-* Axios
 * Expo
+* JSS
 
 ## How to Install
 
