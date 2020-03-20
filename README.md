@@ -3,7 +3,7 @@
 My frist React Native Android App
 
 # Download
-You can download the android app [here](https://rqueiroz.netlify.com/calc-app.apk)
+You can download the android app [here](https://rqueiroz.netlify.com/calc.apk)
 
 ## Build With
 
